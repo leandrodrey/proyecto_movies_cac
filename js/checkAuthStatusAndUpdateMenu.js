@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             iniciarSesionItem.textContent = userData.name;
             iniciarSesionItem.href = "#";
 
+            const registrarseItem = document.querySelector(".registrarse");
+            registrarseItem.style.display = "none";
+
             // Agregar funcionalidad de cierre de sesión
             iniciarSesionItem.addEventListener("click", async () => {
                 try {
