@@ -1,19 +1,17 @@
-const API_SERVER = 'https://api.themoviedb.org/3';
+const API_SERVER = 'http://localhost:3000';
 const options = {
     method: 'GET', // Método de la petición (GET)
     headers: {
         accept: 'application/json', // Tipo de respuesta esperada (JSON)
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8'
-        
     }
 };
 
 // Función para cargar películas en la cuadrícula de tendencias
 const cargarPeliculasTendencia = async (page = 1) => {
     // Realizamos una petición fetch a la API para obtener las películas populares
-    const response = await fetch(`${API_SERVER}/movie/popular?page=${page}`, options);
+    const response = await fetch(`${API_SERVER}/movies`, options);
     const data = await response.json(); // Convertimos la respuesta a JSON
-    const movies = data.results;// Extraemos las películas de la respuesta
+    const movies = data;// Extraemos las películas de la respuesta
     console.log(movies);
     const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');// Seleccionamos el contenedor de películas de tendencia en el DOM, la section que tiene dentro el div peliculas
     tendenciasContainer.innerHTML = '';// Limpiamos el contenido previo del contenedor
@@ -26,18 +24,18 @@ const cargarPeliculasTendencia = async (page = 1) => {
                             <h4>The Beekeeper</h4>
                         </div>
                     </div>
-      </a>*/
+    </a>*/
     movies.forEach(movie => {
         // creo el ancla
         const ancla = document.createElement('a');
-        ancla.href = './pages/detalle.html';
+        ancla.href = './pages/detalle.html?movieId=' + movie.id;
         // creo el div pelicula
         const pelicula = document.createElement('div');
         pelicula.classList.add('pelicula');
         // creo la imagen
         const img = document.createElement('img');
         img.classList.add('imgTendencia');
-        img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        img.src = movie.poster;
         img.alt = movie.title;
         img.loading = 'lazy';
         // creo el div tituloPelicula
@@ -52,7 +50,7 @@ const cargarPeliculasTendencia = async (page = 1) => {
         pelicula.appendChild(tituloPelicula);
         tituloPelicula.appendChild(titulo);
         tendenciasContainer.appendChild(ancla);
-      
+
     });
 
     // Actualizamos el atributo data-page con el número de página actual
@@ -62,11 +60,11 @@ const cargarPeliculasTendencia = async (page = 1) => {
 // Función para cargar películas en el carrusel de películas aclamadas
 const cargarPeliculasAclamadas = async () => {
     // Realizamos una petición fetch a la API para obtener las películas más aclamadas
-    const response = await fetch(`${API_SERVER}/movie/top_rated`, options);
+    const response = await fetch(`${API_SERVER}/movies?genre=Drama&sortOrder=asc`, options);
     const data = await response.json();// Convertimos la respuesta a JSON
-    const movies = data.results; // Extraemos las películas de la respuesta
+    const movies = data; // Extraemos las películas de la respuesta
     const aclamadasContainer = document.querySelector('.aclamadas'); // Seleccionamos el contenedor de películas aclamadas en el DOM
-    
+
     // Iteramos sobre cada película obtenida para lograr la estructura de html que pongo a continuación:
     /*<div class="peliculaItem">
          <img class="imgAclamada" src="./assets/img/aclamada_1.jpg" alt="aclamada_1" loading="lazy">
@@ -75,14 +73,17 @@ const cargarPeliculasAclamadas = async () => {
         // creo el div peliculaItem
         const peliculaItem = document.createElement('div');
         peliculaItem.classList.add('peliculaItem');
+        const ancla2 = document.createElement('a');
+        ancla2.href = './pages/detalle.html?movieId=' + movie.id;
         // creo la imagen
         const img = document.createElement('img');
         img.classList.add('imgAclamada');
-        img.src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+        img.src = movie.poster;
         img.alt = movie.title;
         img.loading = 'lazy';
         // relaciono los elementos
-        peliculaItem.appendChild(img);
+        peliculaItem.appendChild(ancla2);
+        ancla2.appendChild(img);
         aclamadasContainer.appendChild(peliculaItem);
     });
 };
