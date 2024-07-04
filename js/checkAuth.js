@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const response = await fetch('http://localhost:3000/auth', {
+        const response = await fetch('https://codo-a-codo-js-api.vercel.app/auth', {
             credentials: 'include'
         });
         if (!response.ok) {

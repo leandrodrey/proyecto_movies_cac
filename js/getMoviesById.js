@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const API_SERVER = 'http://localhost:3000';
+    const API_SERVER = 'https://codo-a-codo-js-api.vercel.app';
     const options = {
         method: 'GET', // Método de la petición (GET)
         headers: {

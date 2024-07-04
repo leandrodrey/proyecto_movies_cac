@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const response = await fetch("http://localhost:3000/auth", {
+        const response = await fetch("https://codo-a-codo-js-api.vercel.app/auth", {
             credentials: 'include'
         });
 
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Agregar funcionalidad de cierre de sesión
             iniciarSesionItem.addEventListener("click", async () => {
                 try {
-                    const logoutResponse = await fetch("http://localhost:3000/auth/logout", {
+                    const logoutResponse = await fetch("https://codo-a-codo-js-api.vercel.app/auth/logout", {
                         method: "POST",
                         credentials: 'include'
                     });
