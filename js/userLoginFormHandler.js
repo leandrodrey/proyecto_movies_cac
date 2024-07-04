@@ -28,8 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                alert("Inicio de sesión exitoso!");
-                window.location.href = "../index.html";
+                const userData = await response.json();
+                if (userData.token) {
+                    localStorage.setItem('authToken', userData.token);
+                    alert("Inicio de sesión exitoso!");
+                    window.location.href = "../index.html";
+                } else {
+                    console.error("Error: No se recibió un token JWT válido.");
+                    alert("Error en el inicio de sesión: El servidor no proporcionó un token.");
+                }
             } else {
                 const errorData = await response.json();
                 alert("Error en el inicio de sesión: " + errorData.message || "Inténtalo nuevamente.");

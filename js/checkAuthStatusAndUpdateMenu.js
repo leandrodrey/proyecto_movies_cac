@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     console.error("Error al cerrar sesión:", error);
                 }
             });
-
-        } else if (response.status === 401) {
         } else {
             console.error("Error al obtener datos de autenticación:", response.status);
         }
