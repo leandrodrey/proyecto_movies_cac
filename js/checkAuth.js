@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const token = localStorage.getItem('authToken');
         const response = await fetch('https://codo-a-codo-js-api.vercel.app/auth', {
             method: 'GET',
-            credentials: 'include',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+            credentials: 'include'
         });
 
         if (response.ok) {

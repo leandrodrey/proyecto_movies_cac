@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const response = await fetch("https://codo-a-codo-js-api.vercel.app/auth", {
+            method: "GET",
             credentials: 'include'
         });
 
