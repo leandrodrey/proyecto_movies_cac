@@ -12,7 +12,7 @@ const cargarPeliculasTendencia = async (page = 1) => {
     const response = await fetch(`${API_SERVER}/movies`, options);
     const data = await response.json(); // Convertimos la respuesta a JSON
     const movies = data;// Extraemos las películas de la respuesta
-    console.log(movies);
+    console.log("Todas las Películas:", movies);
     const tendenciasContainer = document.querySelector('.peliculasTendencia .peliculas');// Seleccionamos el contenedor de películas de tendencia en el DOM, la section que tiene dentro el div peliculas
     tendenciasContainer.innerHTML = '';// Limpiamos el contenido previo del contenedor
 
@@ -60,9 +60,10 @@ const cargarPeliculasTendencia = async (page = 1) => {
 // Función para cargar películas en el carrusel de películas aclamadas
 const cargarPeliculasAclamadas = async () => {
     // Realizamos una petición fetch a la API para obtener las películas más aclamadas
-    const response = await fetch(`${API_SERVER}/movies?genre=Drama&sortOrder=asc`, options);
+    const response = await fetch(`${API_SERVER}/movies?genre=Action&sortOrder=asc`, options);
     const data = await response.json();// Convertimos la respuesta a JSON
     const movies = data; // Extraemos las películas de la respuesta
+    console.log("Películas filtradas por género y ordenadas por año de salida:", movies);
     const aclamadasContainer = document.querySelector('.aclamadas'); // Seleccionamos el contenedor de películas aclamadas en el DOM
 
     // Iteramos sobre cada película obtenida para lograr la estructura de html que pongo a continuación:

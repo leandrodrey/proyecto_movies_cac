@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const movieData = await response.json();
-
+        console.log("Datos de la Película:", movieData);
         // Formatear la duración de la película en horas y minutos
         const hours = Math.floor(movieData.duration / 60);
         const minutes = movieData.duration % 60;

@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
             country: pais,
         };
 
+        console.log("Información del Usuario a ser enviada en el form: ", userData);
+
         try {
             const response = await fetch("https://codo-a-codo-js-api.vercel.app/auth/register", {
                 method: "POST",
@@ -40,10 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 alert("Registro exitoso!");
-                window.location.href = "../index.html";
+                console.log("Respuesta: ", response);
+                console.log("Usuario Creado: ", response.json());
             } else {
-                const errorData = await response.json();
                 alert("Error en el registro: Inténtalo nuevamente.");
+                console.log("Error: ", response.json());
             }
         } catch (error) {
             console.error("Error al enviar la solicitud:", error);
