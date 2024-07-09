@@ -25,22 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const movieData = {
-            title,
-            status,
+            title: title,
+            status: status,
             budget: parseInt(budget),
-            revenue:  parseInt(revenue),
+            revenue: parseInt(revenue),
             year: parseInt(year),
-            overview,
+            overview: overview,
             duration: parseInt(duration),
             rate: parseInt(rate),
-            poster,
-            trailer,
-            genres: genres.split(",").map(genre => genre.trim()), // Convertir a array
-            directors: directors.split(",").map(director => director.trim()), // Convertir a array
-            actors: actors.split(",").map(actor => actor.trim()), // Convertir a array
+            poster: poster,
+            trailer: trailer,
+            genres: genres.split(",").map(genre => genre.trim()),
+            directors: directors.split(",").map(director => director.trim()),
+            actors: actors.split(",").map(actor => actor.trim()),
         };
 
-        console.log("Información de la película a ser enviada:", movieData);
+        console.log("Información de la Película a ser enviada:", movieData);
 
         try {
             const response = await fetch("https://codo-a-codo-js-api.vercel.app/movies", {
