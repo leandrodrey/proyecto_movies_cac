@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Película | CAC-MOVIES</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="bodyRegistrarse">
+<header class="headerRegistrarse">
+    <a class="anclaLogo" href="../index.html">
+        <i class="fas fa-film" aria-hidden="true"></i>
+        <a href="../index.html"></a> <span>CAC-Movies</span>
+    </a>
+</header>
+
+<main id="main" class="main main--edit-movie">
+    <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse">
+        <form action="" method="post">
+            <h2 class="tituloRegistrarse">Cargar una nueva película</h2>
+
+            <div>
+                <input type="text" id="title" name="title" required placeholder="Titulo">
+            </div>
+
+            <div>
+                <textarea id="overview" name="overview" rows="5" cols="50" required placeholder="Sinopsis"></textarea>
+            </div>
+
+            <div>
+                <input type="number" id="year" name="year" required placeholder="Año de Estreno">
+            </div>
+
+            <div>
+                <input type="number" id="budget" name="budget" required placeholder="Costo en $">
+            </div>
+
+            <div>
+                <input type="number" id="revenue" name="revenue" required placeholder="Recaudación (en $)">
+            </div>
+
+            <div>
+                <input type="number" id="duration" name="duration" min="1" required placeholder="Duración (minutos)">
+            </div>
+
+            <select id="rate" name="rate" required>
+                <option value="">Selecciona una clasificación</option>
+                <option value="1.0">1</option>
+                <option value="2.0">2</option>
+                <option value="3.0">3</option>
+                <option value="4.0">4</option>
+                <option value="5.0">5</option>
+                <option value="6.0">6</option>
+                <option value="7.0">7</option>
+                <option value="8.0">8</option>
+                <option value="9.0">9</option>
+            </select>
+
+            <select id="status" name="status" required>
+                <option value="">Selecciona un estado</option>
+                <option value="Rumored">Rumored</option>
+                <option value="Planned">Planned</option>
+                <option value="In Production">In Production</option>
+                <option value="Post Production">Post Production</option>
+                <option value="Released">Released</option>
+                <option value="Canceled">Canceled</option>
+            </select>
+
+            <div>
+                <input type="url" id="poster" name="poster" required placeholder="URL del Póster">
+            </div>
+
+            <div>
+                <input type="url" id="trailer" name="trailer" placeholder="URL del Trailer">
+            </div>
+
+            <div>
+                <input type="text" id="genres" name="genres" pattern="[A-Za-z, ]+" required placeholder="Género(s)">
+            </div>
+
+            <div>
+                <input type="text" id="directors" name="directors" pattern="[A-Za-z, ]+" required placeholder="Director(es)">
+            </div>
+
+            <div>
+                <input type="text" id="actors" name="actors" pattern="[A-Za-z, ]+" required placeholder="Actor(es)">
+            </div>
+
+            <div>
+                <button type="submit">Cargar Película</button>
+                <a class="ayuda" href="#">¿Necesitas ayuda?</a>
+            </div>
+        </form>
+    </section>
+</main>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="../js/movieEditFormHandler.js"></script>
+</body>
+</html>
