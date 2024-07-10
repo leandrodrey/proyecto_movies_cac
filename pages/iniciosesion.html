@@ -21,7 +21,7 @@
     <main id="main" class="main">
         <section data-aos="zoom-in" data-aos-duration="1000" class="seccionRegistrarse">
             <!--pongo get ya que en github pages da error el method post-->
-            <form action="" method="get">
+            <form class="loginForm" action="" method="post">
                 <h2 class="tituloRegistrarse">Iniciar Sesión</h2>
                 <div>
                     <input type="email" placeholder="Email" id="email" name="email">
@@ -38,6 +38,7 @@
                     <a id="ayuda" class="ayuda" href="registrarse.html">Registrarse</a>
                 </div>
             </form>
+            <div class="logged"></div>
         </section>
     </main>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
