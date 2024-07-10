@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         const response = await fetch("https://codo-a-codo-js-api.vercel.app/auth", {
-            method: "GET",
-            credentials: 'include'
+            method: "GET"
         });
 
         if (response.ok) {
@@ -20,8 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             iniciarSesionItem.addEventListener("click", async () => {
                 try {
                     const logoutResponse = await fetch("https://codo-a-codo-js-api.vercel.app/auth/logout", {
-                        method: "POST",
-                        credentials: 'include'
+                        method: "POST"
                     });
 
                     if (logoutResponse.ok) {

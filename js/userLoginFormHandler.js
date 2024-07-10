@@ -23,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(loginData),
-                credentials: 'include'
+                body: JSON.stringify(loginData)
             });
 
             if (response.ok) {
