@@ -1,142 +1,170 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
 }
+
 @keyframes tilt-n-move-shaking {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(5px, 5px) rotate(5deg); }
-    50% { transform: translate(0, 0) rotate(0eg); }
-    75% { transform: translate(-5px, 5px) rotate(-5deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
     background: rgb(23, 23, 23);
 }
-   
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #9f3647;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background:#9f3647;
+    background: #9f3647;
 }
-body{
+
+body {
     background-color: #181419;
-    color:white; 
-     /* scrollbar-color: #9f3647  #181419; /*nuevo
-     scrollbar-width: thin;*/
+    color: white;
+    /* scrollbar-color: #9f3647  #181419; /*nuevo
+    scrollbar-width: thin;*/
 }
 
 /*ESTILOS HEADER PARA ESCRITORIO*/
-.header{
-    background-color:#9f3647;
-    color:#ffffff;
+.header {
+    background-color: #9f3647;
+    color: #ffffff;
     height: 10vh;
-    position:sticky;
+    position: sticky;
     top: 0;
-    z-index:10;
-    .navegacion{
+    z-index: 10;
+
+    .navegacion {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-left:40px;
+        margin-left: 40px;
         margin-right: 40px;
         padding: 1.5rem 0;
-        .anclaLogo{
+
+        .anclaLogo {
             text-decoration: none;
             color: #ffffff;
             font-weight: 700;
             font-size: 1.2rem;
             /*animacion hover*/
-            &:hover{
+
+            &:hover {
                 animation: tilt-n-move-shaking 0.25s infinite;
             }
         }
-        .listaNav{
+
+        .listaNav {
             list-style: none;
             display: flex;
             align-items: center;
-            .listaItem{
-                margin-right:20px;
-                .linkNav{
+
+            .listaItem {
+                margin-right: 20px;
+
+                .linkNav {
                     text-decoration: none;
-                    color:#ffffff;
+                    color: #ffffff;
                     font-weight: 700;
                     font-size: 1.1rem;
                     padding: 0.5rem 1rem;
                     /* Agregar efecto de botón presionado */
                     transition: transform 0.3s, box-shadow 0.3s;
+
                     &:hover {
                         transform: scale(0.95);
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                         border-radius: 5px;
                     }
                 }
-                .linkNav.iniciarSesion{
+
+                .linkNav.iniciarSesion {
                     background-color: #181419;
                     color: white;
-                    
+
                     border-radius: 5px;
-                     /* Agregar efecto de botón presionado */
-                     transition: transform 0.3s, box-shadow 0.3s;
-                     &:hover {
-                         background-color: #9f3647;
+                    /* Agregar efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+
+                    &:hover {
+                        background-color: #9f3647;
                         /* transform: scale(0.95);
                          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
-                     }
+                    }
                 }
             }
-           
+
         }
     }
-   
+
 }
+
 /*ESTILOS PARA HEADER MOBILE Y TABLET*/
 
 @media (max-width: 768px) {
-    .header{
+    .header {
         height: initial;
-        .navegacion{
-            margin-left:10px;
+
+        .navegacion {
+            margin-left: 10px;
             margin-right: 10px;
             flex-direction: column;
             row-gap: 20px;
-            .anclaLogo{
+
+            .anclaLogo {
                 font-size: 1.2rem;
-                font-weight:700;
+                font-weight: 700;
             }
-            .listaNav{
-               
-                padding:initial;
-                .listaItem{
-                    .linkNav{
+
+            .listaNav {
+
+                padding: initial;
+
+                .listaItem {
+                    .linkNav {
                         font-weight: 400;
                         margin-right: initial;
                         font-size: 1rem;
                         padding: 0.2rem;
-                        
+
                     }
-                  
+
                 }
             }
         }
     }
 }
+
 /*ESTILOS PARA MAIN ESCRITORIO*/
-.main{
-    .sectionPrincipal{
-        color:white;
-        background:linear-gradient(to right top, #0000008a, #0000008a), url(../assets/img/banner-bg.jpg);
+.main {
+    .sectionPrincipal {
+        color: white;
+        background: linear-gradient(to right top, #0000008a, #0000008a), url(../assets/img/banner-bg.jpg);
         background-size: cover;
         background-position: center;
         height: 90vh;
@@ -145,53 +173,60 @@ body{
         justify-content: center;
         align-items: center;
         text-align: center;
-        .tituloPrincipal{
+
+        .tituloPrincipal {
             font-size: 4rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-        .subtituloPrincipal{
+
+        .subtituloPrincipal {
             font-size: 2.2rem;
             font-weight: 400;
             margin-bottom: 1rem;
         }
-        .botonRegistrarse{
-            background-color:#9f3647;
+
+        .botonRegistrarse {
+            background-color: #9f3647;
             color: #ffffff;
             padding: 1rem 2rem;
             border-radius: 5px;
             font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
-             /* Agregar efecto de botón presionado */
-             transition: transform 0.3s, box-shadow 0.3s;
-             &:hover {
-                 background-color: #9f3647;
-                 transform: scale(0.95);
-                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-             }
+            /* Agregar efecto de botón presionado */
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                background-color: #9f3647;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
         }
     }
-    .buscadorPrincipal{
+
+    .buscadorPrincipal {
         background-color: #181419;
-        color:rgb(255, 255, 255);
+        color: rgb(255, 255, 255);
         height: 50vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
-        .tituloSection{
+
+        .tituloSection {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
         }
-        .buscadorPeliculas{
+
+        .buscadorPeliculas {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 1rem;
-            .inputBuscador{
+
+            .inputBuscador {
                 border: 2px solid white;
                 border-radius: 25px;
                 color: #000000;
@@ -202,64 +237,71 @@ body{
                 padding: 0px 20px;
                 width: 500px;
             }
-            .botonBuscador{
-                background-color:#9f3647;
+
+            .botonBuscador {
+                background-color: #9f3647;
                 display: inline-block;
-                color:#ffffff;
+                color: #ffffff;
                 height: 50px;
                 margin: 20px 10px;
-                padding:0 20px;
+                padding: 0 20px;
                 border-radius: 25px;
                 font-size: 1.2rem;
                 font-weight: 700;
                 border: 2px solid white;
                 text-align: center;
-                 /* Agregar efecto de botón presionado */
-                 transition: transform 0.3s, box-shadow 0.3s;
-                 &:hover {
-                     background-color: #9f3647;
-                     transform: scale(0.95);
-                     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-                 }
+                /* Agregar efecto de botón presionado */
+                transition: transform 0.3s, box-shadow 0.3s;
+
+                &:hover {
+                    background-color: #9f3647;
+                    transform: scale(0.95);
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                }
             }
         }
-       
+
     }
-    .peliculasTendencia{
-        width:80%;
+
+    .peliculasTendencia {
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         margin-top: 10px;
-        .tituloSection{
+
+        .tituloSection {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 40px;
         }
-        .peliculas{
+
+        .peliculas {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap:60px;
-            a{
+            gap: 60px;
+
+            a {
                 text-decoration: none;
                 color: #ffffff;
-                .pelicula{
-                    width:200px;
+
+                .pelicula {
+                    width: 200px;
                     height: 300px;
                     position: relative;
                     overflow: hidden;
                     border-radius: 10px;
                     transition: all 0.5s ease;
-                   
-                    .imgTendencia{
+
+                    .imgTendencia {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                         border-radius: 10px;
-                       
+
                     }
-                  
-                    .tituloPelicula{
+
+                    .tituloPelicula {
                         z-index: 2;
                         position: absolute;
                         text-align: center;
@@ -268,6 +310,7 @@ body{
                         max-width: 20rem;
                         width: 100%;
                         transform: translateY(-50%) translateX(-50%);
+
                         h4 {
                             font-size: 1.6rem;
                             font-weight: bold;
@@ -275,15 +318,17 @@ body{
                             margin-bottom: 0.5rem;
                             letter-spacing: 0.1rem;
                             transition: opacity 0.5s ease-in-out;
-    
+
                         }
                     }
-                    &:hover{
-                       box-shadow: 0 0 30px #9f3648cd;
-                       transform: scale(0.9);
-                      
+
+                    &:hover {
+                        box-shadow: 0 0 30px #9f3648cd;
+                        transform: scale(0.9);
+
                     }
-                    &:hover .tituloPelicula{
+
+                    &:hover .tituloPelicula {
                         width: 100%;
                         height: 100%;
                         backdrop-filter: blur(20px);
@@ -291,51 +336,57 @@ body{
                         justify-content: center;
                         align-items: center;
                     }
+
                     &:hover h4 {
                         width: 100%;
                         padding: 0.5rem;
                         opacity: 1;
                     }
-                 
+
                 }
             }
-          
+
         }
-        .boton{
+
+        .boton {
             border: 1px solid white;
             box-sizing: content-box;
-            margin-top:50px;
-            margin-left:20px;
-            background-color:#9f3647;
+            margin-top: 50px;
+            margin-left: 20px;
+            background-color: #9f3647;
             color: #ffffff;
             padding: 1rem 1rem;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: 500;
             text-decoration: none;
-            margin-bottom:60px;
-             /* Agregar efecto de botón presionado */
-             transition: transform 0.3s, box-shadow 0.3s;
-             &:hover {
-                 background-color: #9f3647;
-                 transform: scale(0.95);
-                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-             }
+            margin-bottom: 60px;
+            /* Agregar efecto de botón presionado */
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            &:hover {
+                background-color: #9f3647;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
 
         }
     }
-    .peliculasAclamadas{
-        width:80%;
+
+    .peliculasAclamadas {
+        width: 80%;
         margin: 0 auto;
         text-align: center;
         margin-top: 10px;
-        margin-bottom:60px;
-        .tituloSection{
+        margin-bottom: 60px;
+
+        .tituloSection {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 40px;
         }
-        .aclamadas{
+
+        .aclamadas {
             overflow-x: scroll;
             overflow-y: hidden;
             width: 100%;
@@ -343,7 +394,8 @@ body{
             justify-content: flex-start;
             align-items: flex-start;
             padding: 0px 0px 40px 0px;
-            .peliculaItem{
+
+            .peliculaItem {
                 border-radius: 25px;
                 width: 170px;
                 min-width: 170px;
@@ -353,98 +405,113 @@ body{
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-               
-                .imgAclamada{
+
+                .imgAclamada {
                     border-radius: 5%;
                     width: 95%;
                     height: 95%;
                     object-fit: cover;
                 }
-                
+
             }
-           
-        
+
+
         }
     }
-   
+
 }
 
 @media (max-width: 768px) {
-    .main{
-        .sectionPrincipal{
+    .main {
+        .sectionPrincipal {
             height: 60vh;
-            .tituloPrincipal{
+
+            .tituloPrincipal {
                 font-size: 2.5rem;
             }
-            .subtituloPrincipal{
+
+            .subtituloPrincipal {
                 font-size: 1.5rem;
             }
-            .botonRegistrarse{
+
+            .botonRegistrarse {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
             }
         }
-        .buscadorPrincipal{
+
+        .buscadorPrincipal {
             height: 30vh;
-            .tituloSection{
+
+            .tituloSection {
                 font-size: 1.6rem;
             }
-            .buscadorPeliculas{
-                .inputBuscador{
+
+            .buscadorPeliculas {
+                .inputBuscador {
                     font-size: 1rem;
                     height: 40px;
                     width: 300px;
                 }
-                .botonBuscador{
+
+                .botonBuscador {
                     height: 40px;
-                    padding:0 15px;
+                    padding: 0 15px;
                     font-size: 1rem;
                 }
             }
         }
-        .peliculasTendencia{
+
+        .peliculasTendencia {
             width: 95%;
-            .tituloSection{
+
+            .tituloSection {
                 font-size: 2rem;
             }
-            .peliculas{
+
+            .peliculas {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-              
-                a{
+
+                a {
                     width: 100%;
-                    .pelicula{
+
+                    .pelicula {
                         width: 100%;
                         height: 500px;
-                       
-                        .tituloPelicula{
+
+                        .tituloPelicula {
                             h4 {
                                 font-size: 1rem;
                             }
                         }
-                       
+
                     }
                 }
-              
-               
+
+
             }
-            .boton{
+
+            .boton {
                 padding: 0.8rem 0.8rem;
                 font-size: 0.8rem;
             }
         }
-        .peliculasAclamadas{
-            .tituloSection{
+
+        .peliculasAclamadas {
+            .tituloSection {
                 font-size: 2rem;
             }
-            .aclamadas{
-                .peliculaItem{
+
+            .aclamadas {
+                .peliculaItem {
                     width: 150px;
                     min-width: 150px;
                     font-size: 15px;
                     margin-left: 20px;
-                    .imgAclamada{
+
+                    .imgAclamada {
                         width: 90%;
                         height: 90%;
                     }
@@ -455,33 +522,38 @@ body{
 }
 
 /*ESTILOS ESCRITORIO FOOTER*/
-.footer{
-    padding:20px;
-    background-color:#9f3647;
-    color:#ffffff;
+.footer {
+    padding: 20px;
+    background-color: #9f3647;
+    color: #ffffff;
     height: 18vh;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap:20px;
-    .navegacion{
+    gap: 20px;
+
+    .navegacion {
         display: flex;
         justify-content: center;
         align-items: center;
-        .listaNav{
+
+        .listaNav {
             list-style: none;
             display: flex;
             align-items: center;
-            .listaItem{
-                margin-left:20px;
-                .linkNav{
+
+            .listaItem {
+                margin-left: 20px;
+
+                .linkNav {
                     text-decoration: none;
-                    color:#ffffff;
+                    color: #ffffff;
                     font-weight: 700;
                     font-size: 1.2rem;
                 }
-                .administradorPeliculas{
+
+                .administradorPeliculas {
                     background-color: #181419;
                     color: white;
                     padding: 0.5rem 1rem;
@@ -490,33 +562,39 @@ body{
             }
         }
     }
-    .flechaArriba{
+
+    .flechaArriba {
         position: fixed;
         bottom: 20px;
         right: 20px;
         color: white;
         cursor: pointer;
     }
-    .aportes,.video{
+
+    .aportes, .video {
         font-size: 14px;
     }
 }
+
 /*ESTILOS FOOTER CELULAR Y TABLET CHICA*/
 @media (max-width: 768px) {
-    .footer{
+    .footer {
         height: initial;
-        padding-top:15px;
+        padding-top: 15px;
         padding-bottom: 20px;
-        .listaNav{
+
+        .listaNav {
             flex-direction: column;
-           
+
             row-gap: 15px;
-            .listaItem{
-                
-                .linkNav{
+
+            .listaItem {
+
+                .linkNav {
                     font-size: 1rem;
                 }
-                .administradorPeliculas{
+
+                .administradorPeliculas {
                     padding: 0.5rem 0.8rem;
                 }
             }
@@ -525,53 +603,60 @@ body{
 }
 
 
-
-
 /*ESTILOS ESCRITORIO PARA PAGINA Registrarse */
-.bodyRegistrarse{
+.bodyRegistrarse {
     height: 100vh;
-    background:linear-gradient(to right top, #24242473,#24242473),url("../assets/img/bg-register.jpg");
+    background: linear-gradient(to right top, #24242473, #24242473), url("../assets/img/bg-register.jpg");
     background-size: cover;
     background-position: center;
-    .headerRegistrarse{
-        color:#ffffff;
+
+    .headerRegistrarse {
+        color: #ffffff;
         height: 8vh;
-        padding:30px;
-        .anclaLogo{
+        padding: 30px;
+
+        .anclaLogo {
             text-decoration: none;
             color: #ffffff;
             font-weight: 700;
             font-size: 1.2rem;
-             /*animacion hover*/
-            &:hover{
+            /*animacion hover*/
+
+            &:hover {
                 animation: tilt-n-move-shaking 0.25s infinite;
             }
         }
     }
-    .main{
-         /*seccion de registrarse.html*/
-        .seccionRegistrarse{
-            background-color:rgb(42, 42, 42);
+
+    .main {
+        /*seccion de registrarse.html*/
+
+        .seccionRegistrarse {
+            background-color: rgb(42, 42, 42);
             width: 30%;
-            margin:0 auto;
+            margin: 0 auto;
             border-radius: 5px;
             padding: 40px 20px;
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 90vh;
-            font-size:1.2rem;
-            .tituloRegistrarse{
+            font-size: 1.2rem;
+
+            .tituloRegistrarse {
                 font-size: 2.5rem;
                 font-weight: 700;
                 margin-bottom: 20px;
             }
+
             /*seleccionar todos los input menos el checkbox*/
-            form{
+
+            form {
                 width: 100%;
-                padding:40px;
-                input:not(.check,.boton),select{
+                padding: 40px;
+
+                input:not(.check,.boton), select {
                     width: 100%;
                     margin-bottom: 10px;
                     height: 40px;
@@ -581,99 +666,110 @@ body{
                     border: 2px solid #9f3647;
                     background-color: #333333;
                     outline: none;
-                    color:rgb(255, 255, 255);
+                    color: rgb(255, 255, 255);
                 }
-                .error input:not(.check,.boton),.error select{
+
+                .error input:not(.check,.boton), .error select {
                     border: 1px solid #ff0000;
                 }
-                .error-text{
+
+                .error-text {
                     color: #ff0000;
                     font-size: 0.8rem;
-                    margin-top:0px;
+                    margin-top: 0px;
                     margin-bottom: 10px;
                 }
-              
-                .terminos{
+
+                .terminos {
                     font-size: 0.8rem;
                     display: flex;
                     align-items: center;
                     margin-bottom: 20px;
-                    .textoCheck{
+
+                    .textoCheck {
                         margin-left: 10px;
                     }
                 }
-                .boton{
+
+                .boton {
                     width: 87%;
                     box-sizing: content-box;
-                    background-color:#9f3647;
+                    background-color: #9f3647;
                     border: 2px solid #9f3647;
                     color: #ffffff;
                     padding: 1rem 1rem;
                     border-radius: 5px;
                     font-size: 1rem;
                     font-weight: 500;
-                   
+
                 }
-                .ayuda{
-                    margin-top:40px;
+
+                .ayuda {
+                    margin-top: 40px;
                     font-size: 1rem;
                     text-decoration: none;
                     color: #787878;
-                    font-weight:400;
-                   
+                    font-weight: 400;
+
                 }
             }
-           
+
         }
-   
+
     }
 }
 
 
-
 /*media querys para mobile PAGINA registrarse*/
 @media (max-width: 1200px) {
-    .bodyRegistrarse{
-        .headerRegistrarse{
-            padding:20px;
-            .anclaLogo{
+    .bodyRegistrarse {
+        .headerRegistrarse {
+            padding: 20px;
+
+            .anclaLogo {
                 font-size: 1rem;
             }
         }
-        .main{
-            .seccionRegistrarse{
+
+        .main {
+            .seccionRegistrarse {
                 width: 95%;
                 padding: 10px 10px;
-                .tituloRegistrarse{
+
+                .tituloRegistrarse {
                     font-size: 2rem;
                 }
-               form{
-                width: 100%;
-                text-align: center;
-               
-                input:not(.check,.boton),select{
-                    width: 80%;
-                    height: 35px;
-                    font-size: 1rem;
+
+                form {
+                    width: 100%;
+                    text-align: center;
+
+                    input:not(.check,.boton), select {
+                        width: 80%;
+                        height: 35px;
+                        font-size: 1rem;
+                    }
+
+                    .terminos {
+                        width: 80%;
+                        margin: 0 auto;
+                        font-size: 0.7rem;
+                    }
+
+                    .boton {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        width: 70%;
+                        padding: 0.8rem 0.8rem;
+                        font-size: 0.8rem;
+                    }
+
+                    .ayuda {
+                        text-align: left;
+                        font-size: 0.8rem;
+                    }
                 }
-                .terminos{
-                    width: 80%;
-                    margin:0 auto;
-                    font-size: 0.7rem;
-                }
-                .boton{
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    width: 70%;
-                    padding: 0.8rem 0.8rem;
-                    font-size: 0.8rem;
-                }
-                .ayuda{
-                    text-align: left;
-                    font-size: 0.8rem;
-                }
-               }
-               
+
             }
         }
     }
@@ -681,75 +777,85 @@ body{
 }
 
 /*ESTILOS ESCRITORIO Detalle Mario*/
-.mainDetalle{
-    
-    .detalle{
-        padding-top:50px;
-        background:linear-gradient(to right top, #6d6969a7, #6d6969a7),url("../assets/img/mario-bg.jpg");
+.mainDetalle {
+
+    .detalle {
+        padding-top: 50px;
+        background: linear-gradient(to right top, #6d6969a7, #6d6969a7), url("../assets/img/mario-bg.jpg");
         background-size: cover;
         background-position: center;
         height: 70vh;
-        .contenedorDetalle{
-            width:75%;
+
+        .contenedorDetalle {
+            width: 75%;
             margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
             column-gap: 60px;
-            img{
-              border-radius: 20px;
+
+            img {
+                border-radius: 20px;
             }
-            .textoDetalle{
-                h1{
+
+            .textoDetalle {
+                h1 {
                     font-size: 2.2rem;
                     font-weight: 700;
                 }
-                h2{
-                    margin-top:20px;
+
+                h2 {
+                    margin-top: 20px;
                 }
-                .contenedorCreditos{
-                    margin-top:20px;
+
+                .contenedorCreditos {
+                    margin-top: 20px;
                     display: flex;
-                    justify-content:space-between;
+                    justify-content: space-between;
                 }
             }
         }
-        
-        
-       
+
+
     }
-    .trailer{
-        padding-top:150px;
+
+    .trailer {
+        padding-top: 150px;
         padding-bottom: 100px;
-        width:75%;
+        width: 75%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         column-gap: 70px;
-        .contenedorInfo{
-            .redes{
+
+        .contenedorInfo {
+            .redes {
                 margin-bottom: 20px;
-                ul{
+
+                ul {
                     list-style: none;
                     display: flex;
                     column-gap: 20px;
-                    li{
-                        a{
+
+                    li {
+                        a {
                             text-decoration: none;
                             color: #ffffff;
                             font-size: 2.5rem;
                             margin-right: 50px;
                         }
                     }
-                  
+
                 }
             }
-            .info{
-                table{
+
+            .info {
+                table {
                     width: 100%;
-                    tr{
-                        td{
+
+                    tr {
+                        td {
                             font-size: 1.2rem;
                             padding: 10px 0px;
                         }
@@ -760,70 +866,84 @@ body{
     }
 
 }
+
 /*ESTILOS MOBILE Y TABLETS DETALLE*/
-@media screen and (max-width:1200px){
-    .mainDetalle{
-        .detalle{
+@media screen and (max-width: 1200px) {
+    .mainDetalle {
+        .detalle {
             height: initial;
-            .contenedorDetalle{
+
+            .contenedorDetalle {
                 flex-direction: column;
                 row-gap: 20px;
-                img{
+
+                img {
                     width: 100%;
                     height: 300px;
                 }
-                .textoDetalle{
-                    h1{
+
+                .textoDetalle {
+                    h1 {
                         font-size: 1.5rem;
                     }
-                    h2{
+
+                    h2 {
                         font-size: 1rem;
                     }
-                    .contenedorCreditos{
+
+                    .contenedorCreditos {
                         flex-direction: column;
                         row-gap: 10px;
                     }
                 }
             }
         }
-        .trailer{
-            width:95%;
-            padding-top:50px;
+
+        .trailer {
+            width: 95%;
+            padding-top: 50px;
             padding-bottom: 50px;
             flex-direction: column;
             row-gap: 20px;
-            .contenedorTrailer{
+
+            .contenedorTrailer {
                 width: 100%;
-                h2{
+
+                h2 {
                     margin-bottom: 20px;
                 }
-                iframe{
+
+                iframe {
                     width: 100%;
                     height: 300px;
-                
+
                 }
             }
-            .contenedorInfo{
+
+            .contenedorInfo {
                 width: 100%;
-                .redes{
-                    width: 100% ;
-                    ul{
+
+                .redes {
+                    width: 100%;
+
+                    ul {
                         width: 100%;
                         display: flex;
                         justify-content: space-between;
-                       
-                        li{
-                            a{
+
+                        li {
+                            a {
                                 font-size: 2rem;
                                 margin-right: 20px;
                             }
                         }
                     }
                 }
-                .info{
-                    table{
-                        tr{
-                            td{
+
+                .info {
+                    table {
+                        tr {
+                            td {
                                 font-size: 1rem;
                             }
                         }
@@ -834,9 +954,39 @@ body{
     }
 }
 
-hr{
+hr {
     border: 1px solid #9f3647;
     width: 80%;
     margin: 0 auto;
     margin-top: 40px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #181419;
+    margin: 0 auto
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    th, td {
+        &:nth-child(n+6):nth-child(-n+11) {
+            display: none;
+        }
+    }
+}
+
+.sectionEdit {
+    overflow: scroll;
+    padding: 30px 20px 20px 20px;
+}
+
+.main--edit-movie {
+    height: auto;
 }
