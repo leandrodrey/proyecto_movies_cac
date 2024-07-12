@@ -1,3 +1,5 @@
-Este es el Frontend que se integrará con el proyecto final de backend de Codo a Codo: https://github.com/leandrodrey/Codo-a-Codo-JS-API
+# Movies front end
 
-Es un fork del repositorio original y modificado para mostrar la información de los diferentes endpoints.
+Este repositorio es un FORK de un front end hecho en HTML/CSS y Javascript vainilla en el marco del curso Codo a Codo. 
+
+El objetivo del mismo es simular una APP de películas. Se usa como base para integrar con el backend que se realiza en el curso de Fullstack Node.js.
